@@ -1,0 +1,345 @@
+:root {
+    --keyboard-bg-color: rgba(25, 25, 40, 0.4);
+    --key-bg-color: rgba(45, 50, 70, 0.55);
+    --key-color: #f0f4ff;
+    --key-glow: rgba(130, 160, 255, 0.25);
+    --lock-on-color: #00ffc3;
+    --font-m: 'vr-m', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #090c14, #151c28);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: var(--font-m);
+}
+
+.key {
+    background: var(--key-bg-color);
+    color: var(--key-color);
+    font-size: 12px;
+    width: 46px;
+    height: 40px;
+    margin: 0 4px;
+    padding: 0 2px;
+    border-radius: 16px;
+    /* more rounded */
+    display: flex;
+    flex-direction: column;
+    /* Ensure content stacks if multiple lines (like for ~` or !1) */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Center text within the flex item */
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+
+    box-shadow:
+        0 6px 10px rgba(0, 0, 0, 0.7),
+        /* lifted base */
+        inset 0 -3px 5px rgba(0, 0, 0, 0.6),
+        /* depth rim bottom */
+        inset 0 2px 3px rgba(255, 255, 255, 0.05);
+    /* top light rim */
+
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+
+.key:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 14px rgba(0, 0, 0, 0.8),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.65),
+        inset 0 2px 4px rgba(255, 255, 255, 0.06);
+}
+
+.key:active {
+    transform: translateY(1px);
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.6),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.75),
+        inset 0 1px 2px rgba(255, 255, 255, 0.04);
+}
+
+.key-empty {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.key.large {
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.key .fas {
+    font-size: 11px;
+}
+
+.key.large i {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+i.underscore {
+    margin-top: -8px;
+}
+
+/* KEYBOARD BASE + DEPTH */
+.keyboard-container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard {
+    width: max-content;
+    background: var(--keyboard-bg-color);
+    border-radius: 28px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    backdrop-filter: blur(20px) saturate(220%);
+    -webkit-backdrop-filter: blur(20px) saturate(220%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(125, 95, 255, 0.04);
+}
+
+/* Row & Group Layouts */
+.row {
+    display: grid;
+    grid-template-columns: auto 0.2fr 0.2fr;
+    grid-gap: 25px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.group,
+.mini-group {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.mini-group {
+    margin-left: 28px;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Special Key Widths */
+.backspace,
+.tab {
+    width: 80px;
+}
+
+.enter {
+    width: 100px;
+}
+
+.spacebar {
+    width: 405px;
+    font-size: 18px;
+}
+
+.shift {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.l-s {
+    width: 95px;
+}
+
+.r-s {
+    width: 140px;
+}
+
+.c-menu i {
+    border: 1px solid var(--key-color);
+    padding: 3px;
+}
+
+.num-special {
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.num-ins {
+    width: 100px;
+}
+
+.num-large {
+    margin-bottom: -58px;
+    height: 100px;
+}
+
+/* Locks Panel */
+.locks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin-top: 5px;
+    margin-right: 10px;
+    background: rgba(45, 50, 65, 0.45);
+    border-radius: 14px;
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.lock {
+    margin: 5px 22px;
+    width: 135px;
+}
+
+.light-key {
+    padding: 3px 5px;
+    border-radius: 6px;
+}
+
+.on {
+    color: #00ffc3;
+    /* Matching active key glow */
+    border: 1px solid #00ffc3;
+    box-shadow: 0 0 8px 2px rgba(0, 255, 195, 0.6);
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.off {
+    color: #00ffb3;
+    /* Dimmed neutral color */
+    border: 1px solid #555;
+    background-color: transparent;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.6;
+}
+
+
+
+.clicked,
+.active {
+    background: linear-gradient(145deg, #6274f1, #4e60d4);
+    color: #fff;
+    transform: scale(0.95);
+    box-shadow:
+        0 4px 12px rgba(80, 110, 236, 0.4),
+        inset 0 2px 6px rgba(255, 255, 255, 0.05),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(80, 110, 236, 0.5);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.2s ease;
+    animation: keyPress 0.15s ease;
+}
+
+@keyframes keyPress {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.msg {
+    position: absolute;
+    top: -60px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    color: #00ffc3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 0 8px rgba(0, 255, 195, 0.5);
+    z-index: 1000;
+    text-shadow: 0 0 3px #00ffc3;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#keyClicked {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.keyboard-container {
+    position: relative;
+}
+#reset {
+    display: block;
+    margin: 40px auto 0 auto;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00ffc3;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00ffc3;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 195, 0.2), inset 0 0 0 transparent;
+    text-shadow: 0 0 4px #00ffc3;
+    position: relative;
+    overflow: hidden;
+}
+
+#reset::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0, 255, 195, 0.3), transparent);
+    transition: left 0.4s ease-in-out;
+}
+
+#reset:hover::before {
+    left: 100%;
+}
+
+#reset:hover {
+    background-color: rgba(0, 255, 195, 0.1);
+    box-shadow: 0 0 16px rgba(0, 255, 195, 0.5), 0 0 24px rgba(0, 255, 195, 0.2);
+    color: #00ffc3;
+    transform: scale(1.04);
+}
+
+#reset:active {
+    transform: scale(0.96);
+    background-color: rgba(0, 255, 195, 0.2);
+    box-shadow: inset 0 4px 12px rgba(0, 255, 195, 0.3), 0 0 8px rgba(0, 255, 195, 0.2);
+}
+

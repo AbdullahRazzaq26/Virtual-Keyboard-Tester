@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Tester</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="wireless-keyboard.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="keyboard-container">
+            <div class="msg">
+                <p id="keyClicked">No Keys Clicked</p>
+            </div>
+            <div class="keyboard">
+                <div class="row">
+                    <div class="group">
+                        <div data-key="Escape" data-code="Escape" class="key">Esc</div>
+                        <div class="mini-group">
+                            <div data-key="F1" data-code="F1" class="key">F1<i class="fas fa-home"></i></div>
+                            <div data-key="F2" data-code="F2" class="key">F2<i class="fas fa-envelope"></i></div>
+                            <div data-key="F3" data-code="F3" class="key">F3<i class="fas fa-search"></i></div>
+                            <div data-key="F4" data-code="F4" class="key">F4<i class="fas fa-copy"></i></div>
+                        </div>
+                        <div class="mini-group">
+                            <div data-key="F5" data-code="F5" class="key">F5<i class="fas fa-play"><i
+                                        class="fas fa-pause"></i></i>
+                            </div>
+                            <div data-key="F6" data-code="F6" class="key">F6<i class="fas fa-stop"></i></div>
+                            <div data-key="F7" data-code="F7" class="key">F7<i class="fas fa-fast-backward"></i></div>
+                            <div data-key="F8" data-code="F8" class="key">F8<i class="fas fa-fast-forward"></i></div>
+                        </div>
+                        <div class="mini-group">
+                            <div data-key="F9" data-code="F9" class="key">F9<i class="fas fa-volume-down"></i></div>
+                            <div data-key="F10" data-code="F10" class="key">F10<i class="fas fa-volume-up"></i></div>
+                            <div data-key="F11" data-code="F11" class="key">F11<i class="fas fa-volume-off"></i></div>
+                            <div data-key="F12" data-code="F12" class="key">F12<i class="fas fa-sun"></i></div>
+                        </div>
+                    </div>
+                    <div class="group locks">
+                        <div class="lock"><span class="light-key off" id="nlk">N</span></div>
+                        <div class="lock"><span class="light-key off" id="clk">C</span></div>
+                        <div class="lock"><span class="light-key off" id="slk">S</span></div>
+                    </div>
+                    <div class="right">
+                        <div class="group">
+                            <div data-key="PrintScreen" data-code="PrintScreen" class="key">Print Screen</div>
+                            <div data-key="ScrollLock" data-code="ScrollLock" class="key">Scroll Lock</div>
+                            <div data-key="Pause" data-code="Pause" class="key">Pause Break</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="group">
+                        <div data-key="`" data-code="Backquote" class="key large">~<i>`</i></div>
+                        <div data-key="1" data-code="Digit1" class="key">!<span>1</span></div>
+                        <div data-key="2" data-code="Digit2" class="key">@<span>2</span></div>
+                        <div data-key="3" data-code="Digit3" class="key">#<span>3</span></div>
+                        <div data-key="4" data-code="Digit4" class="key">$<span>4</span></div>
+                        <div data-key="5" data-code="Digit5" class="key">%<span>5</span></div>
+                        <div data-key="6" data-code="Digit6" class="key">^<span>6</span></div>
+                        <div data-key="7" data-code="Digit7" class="key">&<span>7</span></div>
+                        <div data-key="8" data-code="Digit8" class="key">*<span>8</span></div>
+                        <div data-key="9" data-code="Digit9" class="key">(<span>9</span></div>
+                        <div data-key="0" data-code="Digit0" class="key">)<span>0</span></div>
+                        <div data-key="-" data-code="Minus" class="key">-<i class="underscore">_</i></div>
+                        <div data-key="=" data-code="Equal" class="key">+<span>=</span></div>
+                        <div data-key="Backspace" data-code="Backspace" class="key backspace">Backspace</div>
+                    </div>
+                    <div class="group">
+                        <div data-key="Insert" data-code="Insert" class="key">Insert</div>
+                        <div data-key="Home" data-code="Home" class="key">Home</div>
+                        <div data-key="PageUp" data-code="PageUp" class="key">Page Up</div>
+                    </div>
+                    <div class="group">
+                        <div data-key="NumLock" data-code="NumLock" class="key">Num Lock</div>
+                        <div data-key="/" data-code="NumpadDivide" class="key">/</div>
+                        <div data-key="*" data-code="NumpadMultiply" class="key">*</div>
+                        <div data-key="-" data-code="NumpadSubtract" class="key">-</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="group">
+                        <div data-key="Tab" data-code="Tab" class="key tab">Tab⭾</div>
+                        <div data-key="q" data-code="KeyQ" class="key">Q</div>
+                        <div data-key="w" data-code="KeyW" class="key">W</div>
+                        <div data-key="e" data-code="KeyE" class="key">E</div>
+                        <div data-key="r" data-code="KeyR" class="key">R</div>
+                        <div data-key="t" data-code="KeyT" class="key">T</div>
+                        <div data-key="y" data-code="KeyY" class="key">Y</div>
+                        <div data-key="u" data-code="KeyU" class="key">U</div>
+                        <div data-key="i" data-code="KeyI" class="key">I</div>
+                        <div data-key="o" data-code="KeyO" class="key">O</div>
+                        <div data-key="p" data-code="KeyP" class="key">P</div>
+                        <div data-key="[" data-code="BracketLeft" class="key">{<span>[</span></div>
+                        <div data-key="]" data-code="BracketRight" class="key">}<span>]</span></div>
+                        <div data-key="\" data-code="Backslash" class="key">|<span>\</span></div>
+                    </div>
+                    <div class="group">
+                        <div data-key="Delete" data-code="Delete" class="key">Delete</div>
+                        <div data-key="End" data-code="End" class="key">End</div>
+                        <div data-key="PageDown" data-code="PageDown" class="key">Page Down</div>
+                    </div>
+                    <div class="group">
+                        <div data-key="Numpad7" data-code="Numpad7" class="key">7<span>Home</span></div>
+                        <div data-key="Numpad8" data-code="Numpad8" class="key num-special">8<i
+                                class="fas fa-long-arrow-alt-up"></i></div>
+                        <div data-key="Numpad9" data-code="Numpad9" class="key">9<span>PgUp</span></div>
+                        <div data-key="NumpadAdd" data-code="NumpadAdd" class="key num-large">+</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="group">
+                        <div data-key="CapsLock" data-code="CapsLock" class="key tab">CapsLock</div>
+                        <div data-key="a" data-code="KeyA" class="key">A</div>
+                        <div data-key="s" data-code="KeyS" class="key">S</div>
+                        <div data-key="d" data-code="KeyD" class="key">D</div>
+                        <div data-key="f" data-code="KeyF" class="key">F</div>
+                        <div data-key="g" data-code="KeyG" class="key">G</div>
+                        <div data-key="h" data-code="KeyH" class="key">H</div>
+                        <div data-key="j" data-code="KeyJ" class="key">J</div>
+                        <div data-key="k" data-code="KeyK" class="key">K</div>
+                        <div data-key="l" data-code="KeyL" class="key">L</div>
+                        <div data-key=";" data-code="Semicolon" class="key">:<span>;</span></div>
+                        <div data-key="'" data-code="Quote" class="key">"<span>'</span></div>
+                        <div data-key="Enter" data-code="Enter" class="key enter">Enter ↩</div>
+                    </div>
+                    <div class="empty-group"></div>
+                    <div class="group">
+                        <div data-key="Numpad4" data-code="Numpad4" class="key">4<i
+                                class="fas fa-long-arrow-alt-left"></i></div>
+                        <div data-key="Numpad5" data-code="Numpad5" class="key num-special">5<i>_</i></div>
+                        <div data-key="Numpad6" data-code="Numpad6" class="key">6<i
+                                class="fas fa-long-arrow-alt-right"></i></div>
+                        <div class="key key-empty"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="group">
+                        <div data-key="Shift" data-code="ShiftLeft" class="key shift l-s"><span>⇧</span>&nbsp;Shift
+                        </div>
+                        <div data-key="z" data-code="KeyZ" class="key">Z</div>
+                        <div data-key="x" data-code="KeyX" class="key">X</div>
+                        <div data-key="c" data-code="KeyC" class="key">C</div>
+                        <div data-key="v" data-code="KeyV" class="key">V</div>
+                        <div data-key="b" data-code="KeyB" class="key">B</div>
+                        <div data-key="n" data-code="KeyN" class="key">N</div>
+                        <div data-key="m" data-code="KeyM" class="key">M</div>
+                        <div data-key="," data-code="Comma" class="key">&lt;<span>,</span></div>
+                        <div data-key="." data-code="Period" class="key">&gt;<span>.</span></div>
+                        <div data-key="/" data-code="Slash" class="key">?<span>/</span></div>
+                        <div data-key="Shift" data-code="ShiftRight" class="key shift r-s"><span>⇧</span>&nbsp;Shift
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="key key-empty"></div>
+                        <div data-key="ArrowUp" data-code="ArrowUp" class="key"><i class="fas fa-arrow-up"></i></div>
+                        <div class="key key-empty"></div>
+                    </div>
+                    <div class="group">
+                        <div data-key="Numpad1" data-code="Numpad1" class="key">1<span>End</span></div>
+                        <div data-key="Numpad2" data-code="Numpad2" class="key">2<i
+                                class="fas fa-long-arrow-alt-down"></i></div>
+                        <div data-key="Numpad3" data-code="Numpad3" class="key">3<span>PdDn</span></div>
+                        <div data-key="Enter" data-code="NumpadEnter" class="key num-large">Enter</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="group">
+                        <div data-key="Control" data-code="ControlLeft" class="key">Ctrl</div>
+                        <div data-key="OS" data-code="OSLeft" class="key"><i class="fab fa-windows"></i></div>
+                        <div data-key="Alt" data-code="AltLeft" class="key">Alt</div>
+                        <div data-key=" " data-code="Space" class="key spacebar"></div>
+                        <div data-key="Alt" data-code="AltRight" class="key">Alt</div>
+                        <div data-key="Fn" data-code="Fn" class="key">Fn</div>
+                        <div data-key="ContextMenu" data-code="ContextMenu" class="key c-menu"><i
+                                class="fas fa-bars"></i></div>
+                        <div data-key="Control" data-code="ControlRight" class="key">Ctrl</div>
+                    </div>
+                    <div class="group">
+                        <div data-key="ArrowLeft" data-code="ArrowLeft" class="key"><i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div data-key="ArrowDown" data-code="ArrowDown" class="key"><i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div data-key="ArrowRight" data-code="ArrowRight" class="key"><i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div data-key="Numpad0" data-code="Numpad0" class="key num-ins">0<span>Ins</span></div>
+                        <div data-key="NumpadDecimal" data-code="NumpadDecimal" class="key">.<span>Del</span></div>
+                        <div class="key key-empty"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="reset">Reset</button>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
