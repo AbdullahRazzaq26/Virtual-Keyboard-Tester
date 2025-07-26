@@ -31,7 +31,7 @@ body {
     /* more rounded */
     display: flex;
     flex-direction: column;
-    /* Ensure content stacks if multiple lines (like for ~` or !1) */
+    /* Ensure content stacks if multiple lines (like for ~ or !1) */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -343,3 +343,132 @@ i.underscore {
     box-shadow: inset 0 4px 12px rgba(0, 255, 195, 0.3), 0 0 8px rgba(0, 255, 195, 0.2);
 }
 
+/* RESPONSIVE DESIGN */
+
+/* Tablet and below */
+@media (max-width: 1150px) {
+  .keyboard-container {
+    padding: 0px;
+  }
+
+  .keyboard {
+    transform: scale(0.85);
+    padding: 15px 8px;
+  }
+
+  .key {
+    width: 23px;
+    height: 36px;
+    font-size: 9px;
+  }
+
+  .spacebar {
+    width: 230px;
+    font-size: 16px;
+  }
+
+  .enter {
+    width: 56px;
+  }
+
+  .tab,
+  .backspace {
+    width: 62px;
+  }
+
+  .ctrl {
+    width: 49px;
+  }
+
+  .l-s {
+    width: 54px;
+  }
+
+  .r-s {
+    width: 104px;
+  }
+
+  .num-ins {
+    width: 60px;
+  }
+
+  .num-large {
+    height: 88px;
+  }
+
+  .locks {
+    flex-direction: row;
+    width: auto;
+    margin: 10px 0;
+    padding: 5px 10px;
+  }
+
+  .lock {
+    width: 25px;
+    margin: 7px;
+  }
+}
+
+/* Mobile view */
+/* @media (max-width: 600px) {
+  .keyboard-container {
+    padding: 0px;
+  }
+
+  .keyboard {
+    transform: scale(0.75);
+    padding: 15px 8px;
+  }
+
+  .key {
+    width: 13px;
+    height: 36px;
+    font-size: 6px;
+  }
+
+  .spacebar {
+    width: 120px;
+    font-size: 16px;
+  }
+
+  .enter {
+    width: 40px;
+  }
+
+  .tab,
+  .backspace {
+    width: 40px;
+  }
+
+  .ctrl {
+    width: 49px;
+  }
+
+  .l-s {
+    width: 54px;
+  }
+
+  .r-s {
+    width: 64px;
+  }
+
+  .num-ins {
+    width: 50px;
+  }
+
+  .num-large {
+    height: 88px;
+  }
+
+  .locks {
+    flex-direction: row;
+    width: auto;
+    margin: 10px 0;
+    padding: 5px 10px;
+  }
+
+  .lock {
+    width: 25px;
+    margin: 7px;
+  }
+} */
